@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block Title %} Delete Tweet Confirmation {% endblock %}
+
+{% block Content %}
+
+<h1> you want to delete : </h1>
+<h2>{{tweet}}</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <!-- Button to submit and delete the tweet -->
+        <button class="btn btn-primary" type="submit">Delete</button>
+        
+        <!-- Link to cancel and go back to the tweet list -->
+        <a href="{% url 'tweet_list' %}" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+{% endblock %}
